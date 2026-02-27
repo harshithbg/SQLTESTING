@@ -58,7 +58,6 @@ Copilot may:
 - Add JOIN conditions
 - Add WHERE filters
 - Add sorting or grouping
-- Add additional investigation columns
 
 Extensions must still be based on repository SQL.
 
@@ -117,6 +116,42 @@ Copilot must not respond with:
 - "Share database structure"
 
 Copilot must work only using repository knowledge.
+
+-----------------------------------------------------
+
+## COLUMN SAFETY RULE
+
+Copilot must NOT assume or invent column names.
+
+Production databases contain thousands of tables and
+column structures vary widely.
+
+Column usage rules:
+
+1. If column names exist in repository queries,
+   Copilot may reuse those columns.
+
+2. If column names do NOT exist in repository queries,
+   Copilot must use:
+
+   SELECT *
+
+   instead of listing columns.
+
+Copilot must never guess columns based on typical schemas.
+
+Copilot must never generate queries using inferred fields.
+
+Copilot must never say:
+
+- "Typical columns include"
+- "Common fields are"
+- "Assuming column names"
+- "Based on typical schema"
+- "Example columns"
+
+Queries must be production-safe and executable without
+schema assumptions.
 
 -----------------------------------------------------
 
@@ -181,8 +216,8 @@ Copilot may generate a new SQL query.
 
 Generated queries must:
 
+- Use SELECT * unless columns exist in repository queries
 - Follow production-style SQL patterns
-- Use realistic table naming
 - Be suitable for troubleshooting
 - Be immediately usable
 
@@ -199,4 +234,3 @@ asking for additional information.
 Always respond in this format:
 
 SQL Query:
-
