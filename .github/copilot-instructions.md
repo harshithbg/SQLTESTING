@@ -229,8 +229,35 @@ asking for additional information.
 
 -----------------------------------------------------
 
+## ASSUMPTION DISCLOSURE RULE
+
+If Copilot generates a query that is NOT fully based on
+repository SQL, it must clearly state any assumptions made.
+
+This section must be included after the explanation.
+
+Assumptions may include:
+
+- Assumed table relationships
+- Assumed join columns
+- Assumed filters
+- Assumed parameters
+- Generated logic not found in repository
+
+If no assumptions were made, Copilot must state:
+
+Assumptions:
+None. Query based fully on repository SQL.
+
+Users must always be able to understand what parts of
+the query came from the repository and what parts were inferred.
+
+-----------------------------------------------------
+
 ## REQUIRED RESPONSE FORMAT
 
 Always respond in this format:
 
 SQL Query:
+
+
