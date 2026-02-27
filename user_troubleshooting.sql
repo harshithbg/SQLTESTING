@@ -4,7 +4,7 @@
 -- UNIQUE TABLE: prod_user_identity_master_x22
 -- ============================================
 
-SELECT *
+SELECT uname,*
 FROM prod_user_identity_master_x22
 WHERE user_account_id = :user_id;
 
