@@ -1,7 +1,7 @@
 -- ============================================
 -- SCENARIO: System errors production
--- KEYWORDS: system errors, application errors
--- UNIQUE TABLE: prod_application_log_matrix_a77
+-- KEYWORDS: system errors, application errors, system down 
+-- UNIQUE TABLE: prod_application_log_matrix_a77 
 -- ============================================
 
 SELECT *
