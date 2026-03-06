@@ -1,6 +1,6 @@
 -- ============================================
 -- SCENARIO: Billing mismatch detection
--- KEYWORDS: billing mismatch, invoice mismatch
+-- KEYWORDS: billing mismatch, invoice 
 -- UNIQUE TABLE: prod_billing_reconciliation_core_t88
 -- ============================================
 
